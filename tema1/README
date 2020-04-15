@@ -1,0 +1,52 @@
+======================================Tema1====================================
+
+Nume: Filimon Costel-Adrian
+Grupa: 324CC
+
+=====================================Fisiere===================================
+
+Am incercat sa modularizez cat mai bine codul, de aceea am creat mai multe 
+fisiere:
+
+    -> route.c si route_parser.h contin functiile pentru parsarea tabelei de
+        rutare
+    -> arp.c si arp_parser.h contin functiile pentru protocolul ARP
+
+===========================Parsarea Tabelei de Rutare==========================
+
+-> Tablela este citita in functia parse_route_table, linie cu linie; fiecare
+camp este aduagat in structura route_table_entry, formand un array de astfel de 
+intrari.
+ -> Array-ul de te route_table_entry este sortat in main, cu qsort. Functia 
+ comparator face ordonarea dupa prefix, apoi dupa masca(crescator).
+-> Pentru a face o cautare rapida am implementat un binary search modificat, 
+in care returnez indexul primei aparitii a prefixului ce este egal cu
+mask & dest_ip;
+-> Pentru a returna intrarea cu masca cea mai mare, am apelat binary search-ul
+si pornind de la indexul returnat, iterez cat timp am acelasi prefiX(mastile 
+sunt puse crescator). (pentru tabela data, timpul unui ping a scazut de la 
+2 ms la 0.94 ms)
+
+
+===============================Forwarding & ICMP===============================
+
+-> Am urmarit scheletul din laborator, totul a fost clar, explicat chiar si in
+    cerinta 
+
+=======================================ARP=====================================
+
+Am incercat implementarea Protocolului arp, care cu siguranta mi-a luat mai 
+mult decat implementarea a ceea ce este functional. Am lasat functiile si 
+scheletul pentru ca o sa incerc sa il termin. Din acest punct de vedere, 
+lucrurile nu au fost prea clare deoarece in curs este UN SINGUR SLIDE despre 
+ARP, iar pe internet nu am gasit prea multe detalii despre implementare.
+Am implementat propriile mele structuri pentru arp_hdr si ether_arp, schimband
+tipul ip-ului (din array de char --> unsigned int). Problema pe care am gasit-o
+este ca target_ip_addr este 0 si nu intra niciodata in if-urile in care compar
+ip-ul cu ip-ul de pe interfata router-ului. Nu am implementat coada pentru ca 
+nu am reusit sa trec de acest pas.
+
+====================================FEEDBACK===================================
+
+Mi-a placut mult ideea temei, dar a fost cam ambigua, nu ar fi stricat niste 
+explicatii suplimentare. 

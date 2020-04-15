@@ -24,6 +24,8 @@
 /* arphdr */
 #include <net/if_arp.h>
 #include <asm/byteorder.h>
+#include "route_parser.h"
+#include "arp_parser.h"
 
 /* 
  *Note that "buffer" should be at least the MTU size of the 
@@ -31,6 +33,10 @@
  */
 #define MAX_LEN 1600
 #define ROUTER_NUM_INTERFACES 4
+#define ETHER_HEADER_LEN sizeof(struct ether_header)
+#define IP_HEADER_LEN sizeof(struct iphdr)
+#define ICMP_HEADER_LEN sizeof(struct icmphdr)
+
 
 #define DIE(condition, message) \
 	do { \
@@ -41,21 +47,25 @@
 		} \
 	} while (0)
 
-typedef struct {
-	int len;
-	char payload[MAX_LEN];
-	int interface;
+typedef struct{
+	uint32_t len;
+	uint8_t payload[MAX_LEN];
+	uint32_t interface;
 } packet;
 
-extern int interfaces[ROUTER_NUM_INTERFACES];
+int interfaces[ROUTER_NUM_INTERFACES];
+
+// extern int interfaces[ROUTER_NUM_INTERFACES];
+extern int arp_table_len;
 
 int send_packet(int interface, packet *m);
 int get_packet(packet *m);
 char *get_interface_ip(int interface);
 int get_interface_mac(int interface, uint8_t *mac);
-uint16_t ip_checksum(void* vdata,size_t length);
+int check_is_my_ip(uint32_t ip);
+uint16_t checksum(void* vdata,size_t length);
 void init();
-void parse_arp_table();
+void init_packet(packet *pkt);
 
 /**
  * hwaddr_aton - Convert ASCII string to MAC address (colon-delimited format)
@@ -64,4 +74,7 @@ void parse_arp_table();
  * Returns: 0 on success, -1 on failure (e.g., string not a MAC address)
  */
 int hwaddr_aton(const char *txt, uint8_t *addr);
+
+void send_arp_reply(int interface, arpPkt *sendReply, struct ether_header *extract_header, 
+								uint8_t *local_hw_addr);
 

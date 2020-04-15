@@ -2,6 +2,14 @@
 
 int interfaces[ROUTER_NUM_INTERFACES];
 
+
+void init_packet(packet *pkt){
+	memset(pkt->payload, 0, sizeof(pkt->payload));
+	pkt->len = 0;
+	pkt->interface = 0;
+}
+
+
 int get_sock(const char *if_name)
 {
 	int res;
@@ -87,6 +95,19 @@ int get_interface_mac(int interface, uint8_t *mac)
 	return 1;
 }
 
+/* check if this ip is one of the router ips -->index or -1 */ 
+int check_is_my_ip(uint32_t ip){
+	for (int i = 0; i < ROUTER_NUM_INTERFACES; i++){
+		uint32_t interface_ip_addr = inet_addr(get_interface_ip(interfaces[i]));
+		fprintf(stderr, "%u %u\n", ip, interface_ip_addr);
+		if (ip == interface_ip_addr){
+			return i;
+		}
+	}
+			
+	return -1;
+}
+
 void init()
 {
 	int s0 = get_sock("r-0");
@@ -99,7 +120,7 @@ void init()
 	interfaces[3] = s3;
 }
 
-uint16_t ip_checksum(void* vdata,size_t length) {
+uint16_t checksum(void* vdata,size_t length) {
 	// Cast the data pointer to one that can be indexed.
 	char* data=(char*)vdata;
 
@@ -196,26 +217,24 @@ int hwaddr_aton(const char *txt, uint8_t *addr)
 	return 0;
 }
 
-extern struct arp_entry *arp_table;
-extern int arp_table_len;
+void send_arp_reply(int interface, arpPkt *sendReply, struct ether_header *extract_header, 
+								uint8_t *local_hw_addr){
+	packet pkt;
+	// init_packet(&pkt);
+	memset(pkt.payload, 0, sizeof(pkt.payload));
+	pkt.len = 0;
+	pkt.interface = 0;
+	struct ether_header *eth_frame = (struct ether_header *)pkt.payload;
+	memcpy(eth_frame->ether_dhost, extract_header->ether_shost, HW_ADDR_LEN);
+	
+	memcpy(eth_frame->ether_shost, extract_header->ether_dhost, HW_ADDR_LEN);
+	eth_frame->ether_type = htons(ETHERTYPE_ARP); 
 
-void parse_arp_table() 
-{
-	FILE *f;
-	fprintf(stderr, "Parsing ARP table\n");
-	f = fopen("arp_table.txt", "r");
-	DIE(f == NULL, "Failed to open arp_table.txt");
-	char line[100];
-	int i = 0;
-	for(i = 0; fgets(line, sizeof(line), f); i++) {
-		char ip_str[50], mac_str[50];
-		sscanf(line, "%s %s", ip_str, mac_str);
-		fprintf(stderr, "IP: %s MAC: %s\n", ip_str, mac_str);
-		arp_table[i].ip = inet_addr(ip_str);
-		int rc = hwaddr_aton(mac_str, arp_table[i].mac);
-		DIE(rc < 0, "invalid MAC");
-	}
-	arp_table_len = i;
-	fclose(f);
-	fprintf(stderr, "Done parsing ARP table.\n");
+// posibila greseala la memcpy -->adresa de la sendReply
+	memcpy(pkt.payload + ETHER_HEADER_LEN, &sendReply, ARP_PACKET_LEN);
+	pkt.len = ETHER_HEADER_LEN + ARP_PACKET_LEN;
+
+	send_packet(interface, &pkt);
+
 }
+

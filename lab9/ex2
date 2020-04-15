@@ -1,0 +1,457 @@
+=====================================Punctul A=================================
+
+dig A single-v4.protocoale.xyz
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> A single-v4.protocoale.xyz
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 18000
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;single-v4.protocoale.xyz.	IN	A
+
+;; ANSWER SECTION:
+single-v4.protocoale.xyz. 60	IN	A	127.0.0.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 18:55:24 EEST 2020
+;; MSG SIZE  rcvd: 69
+
+dig A single-v6.protocoale.xyz
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> A single-v6.protocoale.xyz
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 32781
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;single-v6.protocoale.xyz.	IN	A
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 18:56:34 EEST 2020
+;; MSG SIZE  rcvd: 53
+
+dig A single.protocoale.xyz
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> A single.protocoale.xyz
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57603
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;single.protocoale.xyz.		IN	A
+
+;; ANSWER SECTION:
+single.protocoale.xyz.	300	IN	A	127.0.0.1
+
+;; Query time: 37 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 18:57:10 EEST 2020
+;; MSG SIZE  rcvd: 66
+
+dig A dorinel.protocoale.xyz
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> A dorinel.protocoale.xyz
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54170
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;dorinel.protocoale.xyz.		IN	A
+
+;; ANSWER SECTION:
+dorinel.protocoale.xyz.	300	IN	A	127.42.0.0
+
+;; Query time: 73 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:01:27 EEST 2020
+;; MSG SIZE  rcvd: 67
+
+
+dig A multi-v4.protocoale.xyz
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> A multi-v4.protocoale.xyz
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 42496
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;multi-v4.protocoale.xyz.	IN	A
+
+;; ANSWER SECTION:
+multi-v4.protocoale.xyz. 244	IN	A	127.1.1.1
+multi-v4.protocoale.xyz. 244	IN	A	127.4.4.4
+multi-v4.protocoale.xyz. 244	IN	A	127.2.2.2
+multi-v4.protocoale.xyz. 244	IN	A	127.3.3.3
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:03:42 EEST 2020
+;; MSG SIZE  rcvd: 116
+
+dig A multi-v6.protocoale.xyz
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> A multi-v6.protocoale.xyz
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 20633
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;multi-v6.protocoale.xyz.	IN	A
+
+;; Query time: 5 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:04:17 EEST 2020
+;; MSG SIZE  rcvd: 52
+
+dig A multi.protocoale.xyz
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> A multi.protocoale.xyz
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44174
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;multi.protocoale.xyz.		IN	A
+
+;; ANSWER SECTION:
+multi.protocoale.xyz.	300	IN	A	127.3.3.3
+multi.protocoale.xyz.	300	IN	A	127.2.2.2
+multi.protocoale.xyz.	300	IN	A	127.4.4.4
+multi.protocoale.xyz.	300	IN	A	127.1.1.1
+
+;; Query time: 38 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:04:50 EEST 2020
+;; MSG SIZE  rcvd: 113
+
+dig A pc.protocoale.xyz
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> A pc.protocoale.xyz
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 53020
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;pc.protocoale.xyz.		IN	A
+
+;; ANSWER SECTION:
+pc.protocoale.xyz.	300	IN	CNAME	pcom.protocoale.xyz.
+pcom.protocoale.xyz.	299	IN	CNAME	protocoale.protocoale.xyz.
+protocoale.protocoale.xyz. 299	IN	A	127.42.42.42
+
+;; Query time: 100 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:05:28 EEST 2020
+;; MSG SIZE  rcvd: 106
+
+dig A pcom.protocoale.xyz
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> A pcom.protocoale.xyz
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 53412
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;pcom.protocoale.xyz.		IN	A
+
+;; ANSWER SECTION:
+pcom.protocoale.xyz.	265	IN	CNAME	protocoale.protocoale.xyz.
+protocoale.protocoale.xyz. 265	IN	A	127.42.42.42
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:06:03 EEST 2020
+;; MSG SIZE  rcvd: 89
+
+=====================================Punctul B=================================
+
+
+single-v6.protocoale.xyz
+single.protocoale.xyz
+dorinel.protocoale.xyz
+multi-v6.protocoale.xyz
+multi.protocoale.xyz
+dig -f addr_6 AAAA
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> single-v6.protocoale.xyz
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58911
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;single-v6.protocoale.xyz.	IN	AAAA
+
+;; ANSWER SECTION:
+single-v6.protocoale.xyz. 220	IN	AAAA	::1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:11:14 EEST 2020
+;; MSG SIZE  rcvd: 81
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> single.protocoale.xyz
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 10816
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;single.protocoale.xyz.		IN	AAAA
+
+;; ANSWER SECTION:
+single.protocoale.xyz.	220	IN	AAAA	::1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:11:14 EEST 2020
+;; MSG SIZE  rcvd: 78
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> dorinel.protocoale.xyz
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 10020
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;dorinel.protocoale.xyz.		IN	AAAA
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:11:14 EEST 2020
+;; MSG SIZE  rcvd: 51
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> multi-v6.protocoale.xyz
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 16548
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;multi-v6.protocoale.xyz.	IN	AAAA
+
+;; ANSWER SECTION:
+multi-v6.protocoale.xyz. 220	IN	AAAA	::2
+multi-v6.protocoale.xyz. 220	IN	AAAA	::3
+multi-v6.protocoale.xyz. 220	IN	AAAA	::4
+multi-v6.protocoale.xyz. 220	IN	AAAA	::1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:11:14 EEST 2020
+;; MSG SIZE  rcvd: 164
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> multi.protocoale.xyz
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 48041
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;multi.protocoale.xyz.		IN	AAAA
+
+;; ANSWER SECTION:
+multi.protocoale.xyz.	220	IN	AAAA	::4
+multi.protocoale.xyz.	220	IN	AAAA	::3
+multi.protocoale.xyz.	220	IN	AAAA	::2
+multi.protocoale.xyz.	220	IN	AAAA	::1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:11:14 EEST 2020
+;; MSG SIZE  rcvd: 161
+
+
+=====================================Punctul C=================================
+
+dig MX protocoale.xyz
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> MX protocoale.xyz
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58939
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;protocoale.xyz.			IN	MX
+
+;; ANSWER SECTION:
+protocoale.xyz.		275	IN	MX	30 alt3.gmail-smtp-in.l.google.com.
+protocoale.xyz.		275	IN	MX	10 alt1.gmail-smtp-in.l.google.com.
+protocoale.xyz.		275	IN	MX	20 alt2.gmail-smtp-in.l.google.com.
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Ma apr 14 19:14:35 EEST 2020
+;; MSG SIZE  rcvd: 132
+
+
+
+=====================================Punctul D=================================
+
+dig A multi-v4.protocoale.xyz +noall +authority
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> A multi-v4.protocoale.xyz +noall +authority
+;; global options: +cmd
+
+
+=====================================Punctul E=================================
+
+
+dig @86.125.40.199 google.com +short
+172.217.20.14
+dig @208.108.80.23 google.com +short
+216.58.192.142
+
+Acest lucru se intampla deoarece Google are mai multe servere. In functie de 
+locatia statiei noastre, serverul ce va rezolva cererea va diferi de la un caz
+la altul.
+
+=====================================Punctul F=================================
+
+dig -f addr @8.8.8.8 +noall +answer
+
+single-v4.protocoale.xyz. 299	IN	A	127.0.0.1
+single.protocoale.xyz.	299	IN	A	127.0.0.1
+dorinel.protocoale.xyz.	299	IN	A	127.42.0.0
+multi-v4.protocoale.xyz. 270	IN	A	127.1.1.1
+multi-v4.protocoale.xyz. 270	IN	A	127.4.4.4
+multi-v4.protocoale.xyz. 270	IN	A	127.2.2.2
+multi-v4.protocoale.xyz. 270	IN	A	127.3.3.3
+multi.protocoale.xyz.	299	IN	A	127.2.2.2
+multi.protocoale.xyz.	299	IN	A	127.1.1.1
+multi.protocoale.xyz.	299	IN	A	127.3.3.3
+multi.protocoale.xyz.	299	IN	A	127.4.4.4
+pc.protocoale.xyz.	299	IN	CNAME	pcom.protocoale.xyz.
+pcom.protocoale.xyz.	299	IN	CNAME	protocoale.protocoale.xyz.
+protocoale.protocoale.xyz. 299	IN	A	127.42.42.42
+pcom.protocoale.xyz.	270	IN	CNAME	protocoale.protocoale.xyz.
+protocoale.protocoale.xyz. 270	IN	A	127.42.42.42
+protocoale.protocoale.xyz. 299	IN	A	127.42.42.42
+
+=====================================Punctul G=================================
+
+Asa imi afiseaza pentru orice adresa as pune, asa ca m-am gandit ca
+am schimbat serverul DNS, lucru care chiar a ajutat:
+
+dig test.dorinel.protocoale.xyz +noall +answer +trace
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> test.dorinel.protocoale.xyz +noall +answer +trace
+;; global options: +cmd
+;; Received 51 bytes from 127.0.0.53#53(127.0.0.53) in 0 ms
+
+dig @8.8.8.8 test.dorinel.protocoale.xyz +noall +answer +trace
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> @8.8.8.8 test.dorinel.protocoale.xyz +noall +answer +trace
+; (1 server found)
+;; global options: +cmd
+.			9817	IN	NS	a.root-servers.net.
+.			9817	IN	NS	b.root-servers.net.
+.			9817	IN	NS	c.root-servers.net.
+.			9817	IN	NS	d.root-servers.net.
+.			9817	IN	NS	e.root-servers.net.
+.			9817	IN	NS	f.root-servers.net.
+.			9817	IN	NS	g.root-servers.net.
+.			9817	IN	NS	h.root-servers.net.
+.			9817	IN	NS	i.root-servers.net.
+.			9817	IN	NS	j.root-servers.net.
+.			9817	IN	NS	k.root-servers.net.
+.			9817	IN	NS	l.root-servers.net.
+.			9817	IN	NS	m.root-servers.net.
+.			9817	IN	RRSIG	NS 8 0 518400 20200427050000 20200414040000 48903 . wP34mYDoECEp17J7V6gerw29I9kU5R5WbBtCoJy1aqN8hli/BxW1d3VW uCeJCQCNdH8wVp8xgsbb1KZ9ztng+o9JxQA1OJQQByizTGNTYWsqNmU1 NMyqg0DIbm85qPAAlWITbxjUlom/Ndnf+2ij17F2DG/49281elA8JIx9 CZma8aiU3NNkabEhvy0MYncqxkjSZ0ZsQd3XvecEU53hpHhmbIuIt6fv U9pDN4J/WiBNznsaxqY6LS+cTJhOCIev/33Od7WgxvHqGfOuQbmSD9IB tFaUUW1LsijR5UVchts7lMaas8yrb0oJddf3OMQcW5H/vKMVKF0jlDes aZIoww==
+;; Received 525 bytes from 8.8.8.8#53(8.8.8.8) in 28 ms
+
+xyz.			172800	IN	NS	y.nic.xyz.
+xyz.			172800	IN	NS	x.nic.xyz.
+xyz.			172800	IN	NS	generationxyz.nic.xyz.
+xyz.			172800	IN	NS	z.nic.xyz.
+xyz.			86400	IN	DS	3599 8 2 B9733869BC84C86BB59D102BA5DA6B27B2088552332A39DCD54BC4E8 D66B0499
+xyz.			86400	IN	DS	3599 8 1 3FA3B264F45DB5F38BEDEAF1A88B76AA318C2C7F
+xyz.			86400	IN	RRSIG	DS 8 1 86400 20200427170000 20200414160000 48903 . P3l8+rBUl334FB4r2NmvY8RwB+5OsHX1I5+4ajym7kTUAQZsNt43Khxc z1YZmZY0Ia4WrPOWE8sDFKQqzQgQwCRGZbNRzpGVV4wQAcB2nbJEHNI6 I8QJ9hBmhqIWyIloAHQ30sfl8K/O2nlV9CDanZ8eHUMUunRpZFC6/ot3 4VxAx1uESFWGKWnFKP7vyNijw16fLPCndkCGalJLolJJeVJylxUizeq0 WiMawB9KNzEydODBPqW5/npmb/k+Y65jUK0ynYybFDz65ScPsNpyZqP8 1mgzvMa+9/N2Holwzic6F3ZviOE6pxlq6jtDvSdKZSc8k6YpKAsO2ey7 VpIZ8g==
+;; Received 683 bytes from 2001:dc3::35#53(m.root-servers.net) in 43 ms
+
+protocoale.xyz.		3600	IN	NS	ns1bcp.name.com.
+protocoale.xyz.		3600	IN	NS	ns2dqr.name.com.
+protocoale.xyz.		3600	IN	NS	ns3hjx.name.com.
+protocoale.xyz.		3600	IN	NS	ns4lrt.name.com.
+1h97h2oec2juov8dlbbjj6i7ik26bm8d.xyz. 3600 IN NSEC3 1 1 1 - 1H9SP7N22537R92KKG4DNO5R90TMHMCQ NS SOA RRSIG DNSKEY NSEC3PARAM
+d394i4dtikr8ao48rslqafc0avj97mka.xyz. 3600 IN NSEC3 1 1 1 - D3B9S8BVRN2IEBV2IRJ74QSTG2TBB0VI NS DS RRSIG
+1h97h2oec2juov8dlbbjj6i7ik26bm8d.xyz. 3600 IN RRSIG NSEC3 8 2 3600 20200425000111 20200326053215 37419 xyz. QhCOAu4yQszhOyNZIIN8flrK8tfwVRtke2Hzy77VHJIlXJzKSnK2P1Hg BF1wIeUnLKC9fAofxIioZiVNS+FqHzJU20jSYk52K/J6Dsha37UnfwLa lEModhinomyh3XiDQ6V+7mHqrNtjQMJyCXL3AaXIFFveC2b9j9Y4ncCk GnU=
+d394i4dtikr8ao48rslqafc0avj97mka.xyz. 3600 IN RRSIG NSEC3 8 2 3600 20200513203551 20200413124349 64504 xyz. DkLd8LAYTBcVUTO9kvv+3gdMjBoYhL+Z3Dw9axM9Ex073k00WPuqZIPm 5ecv68hY1DNKYlR/S8X7XY/fNUnnYE6WpbV4rGKwgvUUqIjshkZUmkTm i000oBJMo0gTMgCwCVuUCPYI7i4QPyt5lEXTERuseiLShY8sS2kEq8Vc gvE=
+;; Received 633 bytes from 212.18.249.42#53(generationxyz.nic.xyz) in 30 ms
+
+dorinel.protocoale.xyz.	300	IN	NS	potato.dfilip.xyz.
+;; Received 84 bytes from 2a00:edc0:107::1#53(ns1bcp.name.com) in 31 ms
+
+test.dorinel.protocoale.xyz. 300 IN	A	127.0.42.0
+test.dorinel.protocoale.xyz. 300 IN	A	127.0.0.42
+dorinel.protocoale.xyz.	300	IN	NS	potato.dfilip.xyz.
+;; Received 144 bytes from 82.78.81.172#53(potato.dfilip.xyz) in 5 ms
+
+
+Toate operatiunile sunt facute RECURSIV:
+Pasi: 
+- fac o cerere catre test.dorinel.protocoale.xyz
+- resolverul meu DNS face o cerere catre radacina test.dorinel.protocoale.xyz, adica root-servers.net
+- serverul radacina face trimitere la domeniul .xyz 
+- resolverul meu interogheaza domeniul .xyz pentru adresa cautata
+- .xyz ma trimite la protocoale.xyz
+- resolverul meu interogheaza protocoale.xyz
+- protocoale.xyz ma trimite la dorinel.protocoale.xyz
+- resolverul meu interogheaza dorinel.protocoale.xyz
+- dorinel.protocoale.xyz ma trimite la test.dorinel.protocoale.xyz.
+
+=====================================Punctul H=================================
+
+
+dig -x 172.217.20.14 +noall +answer
+
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.1-Ubuntu <<>> -x 172.217.20.14 +noall +answer
+;; global options: +cmd
+14.20.217.172.in-addr.arpa. 6929 IN	PTR	ham02s13-in-f14.1e100.net.
+14.20.217.172.in-addr.arpa. 6929 IN	PTR	bud02s28-in-f14.1e100.net.
+
+Numerele din adresa ip sunt in ordine inversa deoarece fiecare numar este o 
+componenta dintr-un arbore, iar pentru fiecare cerere ce face un apel recursiv.
+
+=====================================Punctul I=================================
+
+

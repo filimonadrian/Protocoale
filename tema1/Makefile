@@ -1,5 +1,5 @@
 PROJECT=router
-SOURCES=router.c queue.c list.c skel.c
+SOURCES=router.c queue.c list.c skel.c arp.c route.c
 LIBRARY=nope
 INCPATHS=include
 LIBPATHS=.
@@ -8,6 +8,8 @@ CFLAGS=-c -Wall
 CC=gcc
 
 # Automatic generation of some important lists
+
+
 OBJECTS=$(SOURCES:.c=.o)
 INCFLAGS=$(foreach TMP,$(INCPATHS),-I$(TMP))
 LIBFLAGS=$(foreach TMP,$(LIBPATHS),-L$(TMP))
