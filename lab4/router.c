@@ -39,7 +39,6 @@ struct arp_entry *get_arp_entry(__u32 ip) {
 		if (arp_table[i].ip == ip){
 			return &arp_table[i];
 		}
-
 	}
 
     return NULL;

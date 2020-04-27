@@ -1,7 +1,7 @@
 PROJECT=router
 SOURCES=router.c skel.c
 LIBRARY=nope
-INCPATHS=.
+INCPATHS=include
 LIBPATHS=.
 LDFLAGS=
 CFLAGS=-c -Wall

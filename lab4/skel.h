@@ -31,6 +31,7 @@
  *Note that "buffer" should be at least the MTU size of the 
  * interface, eg 1500 bytes 
  */
+
 #define MAX_LEN 1600
 #define ROUTER_NUM_INTERFACES 4
 
@@ -63,6 +64,7 @@ int get_interface_mac(int interface, uint8_t *mac);
 uint16_t ip_checksum(void* vdata,size_t length);
 void init();
 void parse_arp_table();
+
 /**
  * hwaddr_aton - Convert ASCII string to MAC address (colon-delimited format)
  * @txt: MAC address as a string (e.g., "00:11:22:33:44:55")

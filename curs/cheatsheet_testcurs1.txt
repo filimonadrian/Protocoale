@@ -1,0 +1,324 @@
+
+
+==================================Cursul2======================================
+
+
+Slide11:
+    Protocol: set de reguli respectate de parti pentru a comunica intre ele;
+         se refera la:
+            -formatul mesajelor
+            -operatiile executate
+
+Stiva Iso-osi - 12
+
+   In TCP/IP nu exista Presentation si Session
+
+
+Legatura de date - 14
+    Probleme rezolvate: -incadrare
+                        -control erori
+                        -control flux
+                        -transmisie transparenta
+                        Exemplu : HDLC(Higgh level data link control)
+
+Nivel de retea: transmitera pachetelor intre oricare doua noduri din retea
+    Probleme rezolvate: -adresarea
+                        -dirijare
+                        -calcul tabele de dirijare
+
+Nivel de transport: asogura un transfer de date corect intre procese
+    Probleme rezolvate: -separa furnizorul de utilizator
+
+Primitive de serviciu: Slide 22
+    -4 clase de primitive:
+        -REQUEST
+        -INDICATION - anunta primirea unei cereri
+        -RESPONSE
+        -CONFIRM
+    SAP = Service Access Point
+
+    Specificatie serviciu: 
+        - primitive
+        - parametri
+        - reguli asupra ordinii operatiilor
+
+    Specificatie protocol:
+        - scop si functii
+        - servicii oferite si utilizate 
+        - tipuri si formate de mesaje 
+        - reguli de reactie a fiecarei entitati la comenzi
+
+Protocoale OSI: Slide 29
+
+Modelul TCP/IP: - Slide 30
+    Nivelul inferior : sub-retea
+    Nivelul Internet: - un singur protocol, IP
+                      - pentru retele interconectate
+    Nivelul Transport:  - TCP: canal sigur
+                        - UDP: canal nesigur pentru livrarea datagramelor
+
+
+            OSI                 TCP/IP
+
+       7.Application           Application       
+       6. Presentation         NOT PRESENT 
+       5. Session              NOT PRESENT
+       4. Transport            Transport
+       3. Network              Internet
+       2. Data link            |    Sub-Network
+       1. Physical             |
+
+Protocoale in TCP/IP - slide 31
+
+SMTP - Mail -> Port 25 TCP
+
+
+==================================Cursul3======================================
+
+Nivelul Legatura de date
+
+Functii: 
+    1- incadrarea datelor 
+    2- transmisia transparenta
+    3- controlul erorilor -> mesage de confirmare, ceasuri, numere de secventa
+    4- controlul fluxului -> protocol
+    5- gestiunea legaturii -> protocol stabilirea si desfiintarea legaturii,
+                            configurare(legaturi multipunct)
+
+1) Metode de incadrare - Slide 4
+    - caractere de control - BSC
+    - Numararea caracterelor - DDCMP
+    - indicatori de incadrare - HDLC
+
+2) Transmisie transparenta - Slide 6
+                            - schema cu DLE-uri si punere de 0 la 5 biti
+
+3) Detectia erorilor: Ponderea si distanta Hamming - Slide 8
+    - detectia a cel mult r erori: d(u, v) >= r + 1
+    - corectia a cel mult r erori: d(u, v) >= 2r + 1
+    
+    Metoda Hamming: control paritate(biti de control) - slide 11
+    Coduri polinomiale - detectoare de erori - slide 16
+    CRC -- detecteaza 100% erori 1,2, nr impar de biti
+
+Protocoale elementare pentru legatura de date - slide 19
+    - protocoale start-stop - trimit cadru, astept ack
+    - ferestre glisante - slide 20
+                        - exemplu - slide 41
+                        - la la transmitator, fereastra contine numerele cadrelor
+                                transmise si ne-confirmate
+                        - la receptor, fereastra specifica numerele cadrelor ce pot fi
+                            acceptate;
+
+Protocoale cu fereastră supraunitară de transmisie: - slide 47
+    - Protocol cu retransmitere neselectiva: - slide 47
+        - Sunt MaxSecv + 1 numere de secventa diferite
+            Fereastra maxima a transmitatorului poate fi de MaxSecv cadre
+    - Protocol cu retransmitere selectiva 
+        Fereastra receptorului este supraunitara
+        – transmite Nak cu numarul 2 pentru cadru eronat
+        – apoi reconfirma ultimul cadru corect receptionat (Ack 1)
+
+Priority Flow Control( varianta a ethernet care garanteaaz livrarea cadrelor
+    EX – IEEE 802.1Qbb - slide 60
+    - Standardul Ethernet (IEEE 802.3)
+        - conexiuni punct la punct
+        - livrarea este best-effort
+PPPoE - point to point over ethernet
+    - discovery - pachet de initiere
+    - Session
+
+==================================Cursul4======================================
+
+Bullshit
+
+==================================Cursul5======================================
+
+Nivelul de retea
+
+De ce pachete? => Multiplexare:
+    Se aloca transmisiilor:
+        - sloturi de timp(STDM)
+        - subcanale de frecvente diferite(FDM) 
+
+Functiile nivelului retea: 
+    - dirijarea pachetelor
+    - adresarea
+
+Organizarea interna:
+
+1) Datagrame - Slide 6
+    - pachetul contine toate informatiile necesare routerelor pentru pasare
+    --- Organizare fara conexiune 
+    - nu asigura conexiunea 
+    - nu pastreaza ordinea 
+    - se gasesc rute alternative
+
+2) Circuit virtual -- Slide 8
+    --- Organizare bazata pe conexiune
+        - transferul incepe dupa stabilirea conexiunii
+        - alocare de memorie tampon
+        - transmitatorul stie ca exista o conexiunea si ca receptorul este pregatit
+        - se pastreaza ordinea pachetelor
+        - se poate controla fluxul
+        Ex: VPN, MPLS
+
+MTU – Maximum Transmission Unit
+
+Protocolul IP:
+    - schema de adresare
+    - org. interna: datagrama
+    - model vest effort
+    - nu corecteaza erorile
+
+    - 20 octeti(bytes) de header(fiecare camp - 4 bytes)
+    Format pachet: slide 11
+
+Clase de adrese: Slide 15
+
+Conversie IP->Etheret: - slide 20 
+    - tabel de corespondenta
+    - ARP(schimb de mesaje)
+
+Subretele: Slide 23
+    - CIDR(Classless InterDomain Routing) Slide 24
+    Reguli pentru a avea o mască pentru un bloc de adrese:
+    - lungimea blocului trebuie sa fie o putere a lui 2
+    - toate adresele din bloc au aceeasi adresa_retea -> adresa
+    de inceput a blocului de adrese trebuie sa fie multiplu de
+    dimensiunea acestuia
+    
+    - NAT(Network Address Translation) 
+        - translateaza intre adresa privata si o adresa globala - slide 31
+        - principiul NAT: se foloseste IP + nr_port transmitator
+                            - memoreaza in tabela de translatare
+                            - inlocuieste nr_port cu index tabela
+                            - !!- recompune checksum ip si TCP
+
+    - ICMP(Internet Control Message Protocol) - Slide 35
+
+    - Dirijarea : slide 37
+        - vector de distanta : problema numararii la infinit - slide 40
+            - solutii: split horizon - noile distante nu se trimit vecinului
+                            prin care trec actualele rute(nu este necesar ca informatia
+                            sa fie retransmisa pe aceeasi interfata pe care a fost primita)
+                        -split horizon with poison reverse
+
+        RIP(Routing Information Protocol) - slide 43
+            - transmite vectorii de distanta la fiecare 30 secunde
+            - distanta maxima - 15 hopuri(16 - infinit)
+            - trimite LSP(link state packet) prin inundare - slide 44
+
+Structura ierarhica: 
+    -> INTR-UN AS(autonomous System) se foloseste acealasi algoritm de rutare
+        - denumit interior gateway protocol(IGP)
+        - in general se foloseste OSPF(OSPF – Open Shortest Path First)
+    -> INTRE ASs 
+        - exterior gateway protocol (EGP)
+        - in general BGP(bazat pe RIP)
+
+Structura ierarhica AS
+    - format din mai multe zone -> fiecare zona este un grup de retele - slide 49
+    - zona Z0 -> backbone 
+    - zone stub Z1..Zn legate la backbone
+    - rutele intre stub-uri trec prin backbone 
+
+Mesaje OSPF: slide 51
+    - pachete IP cu numar de protocol 89
+    - este de tip Link state
+    - Hello, Link state request, link state update, linst state ack, database description
+    - OSPF - nu are neaparat minim un backbone si un stub
+
+BGP - slide 54
+
+Retele ad-hoc - slide 55
+    - este un graf
+
+IPV6 - slide 64
+    - 40 de octeti(128 biti)
+    - Diferenţe circuit virtual două fluxuri cu aceeaşi etichetă se
+    diferentiaza prin adr sursă + adr dest aceeaşi pereche sursă+dest poate avea
+    mai multe fluxuri
+    - nu permite BROADCAST
+
+==================================Cursul6======================================
+
+Nivelul transport in TCP/IP
+
+Retea - transmiterea pachetelor
+Transport - comunicarea intre aplicatii
+    -identificare unica a unui punct de acce: <adresa_retea, port>
+
+Servicii:
+    - orientate pe conexiune - TCP
+    - fara conexiune - UDP
+
+Socket = punctul in care procesul de aplicatie se ataseaza la retea
+    - nu e standard de jure, e standard de facto
+
+Creare socket - slide 6
+
+Diagrama TCP - Slide 13
+
+UDP - User Datagram Protocol (Slide 19)
+    - DESTINATION PORT SI SOURCE PORT pot DIFERI
+    checksum (calculat la fel ca la TCP) dar nefolosit
+    Nu control flux
+    Nu control erori
+    Nu retransmisie
+
+Aplicatii care folosesc UDP: 
+    - DNS
+    • Voice over IP
+    • Online Games
+    • Se foloseste atunci cand:
+        – Latența este foarte importantă
+        – Livrarea tuturor datelor nu e necesara
+        – Retransmisiile sunt implementate de aplicatii cand e nevoie
+        (DNS)
+
+TCP: Transmission Protocol Unit - Slide 22
+    - orientat pe flux de octeti 
+    Aplicația receptoare citește octeți (câți vrea!) din conexiunea TCP
+    • Orientat pe conexiune
+    • Interfață flux (Stream)
+        – transmisie si receptie siruri de octeti
+    • Face controlul congestiei adaptând viteza de transmisie la
+    condițiile rețelei
+    • Garantează transmisie în ordine și sigură a datelor pe o
+    conexiune
+    • Full duplex
+    • Stabilire sigură a conexiunii - three-way handshake
+    • Eliberare lină a conexiunii – fără pierdere de date
+
+Diagrama antet tcp - slide 26
+    Sequence number – numarul primului octet din segment
+    Acknowledgement number – numarul urmatorului octet asteptat
+
+Checksum - slide 35
+            - Probleme - slide 37
+    Condiții - fereastra receptor ar trebui sa fie >= bandwidth*delay
+
+Timeout - slide 44
+
+The Real-Time Transport Protocol RTP - slide 49
+    - Functie principala: multiplexare fluxuri RTP si
+        transmiterea lor ca un singur șir de pachete UDP
+    - Fara retransmiterea pachetelor
+
+==================================Cursul8======================================
+
+DNS
+
+URL – Uniform Resource Locator
+    schema protocol (http, ftp etc.)
+    host ptr. web nume / adresa IP a serverului Web
+    port# numar port server Web (80 pentru http)
+    path calea de la radacina serverului la resursa
+
+Fiecare inregistrare contine: 
+    Nume_domeniu, timp de viata, clasa, tip, valoare
+    
+    
+    
+    
