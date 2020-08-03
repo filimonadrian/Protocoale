@@ -29,8 +29,11 @@ int main(int argc, char** argv){
   
   printf("[send] I'll send file name and dimension\n");
   
-  send_message(&t);
-
+  int ret = send_message(&t);
+  if (ret < 0) {
+    perror("HAp ca nu merge");
+  }
+  printf("pacpacp");
   if (recv_message(&t) < 0){
         perror("Receive error ...");
         return -1;

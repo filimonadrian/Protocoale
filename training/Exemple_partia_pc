@@ -1,0 +1,121 @@
+Cerinte Partial
+1)
+si asta Scrieți o aplicație de interschimbat fișiere. Există un server care 
+menține o listă de fișiere și clienți care pot încărca sau descărca fișiere.
+Serverul suportă operațiile UPLOAD, DOWNLOAD și LIST.
+
+LIST: serverul intoarce către client lista cu toate fișierele disponibile pe 
+server (o listă de nume), iar clientul le afișează pe ecran.
+UPLOAD: serverul primește de la client un nume de fișier pe care îl adaugă în 
+listă, apoi primește întregul conținut de la client, apoi îl scrie pe disk.
+Dacă fișierul deja există, este suprascris.
+DOWNLOAD: serverul primește de la client un nume de fișier și îi trimite 
+conținutul fișierului. Clientul îl primește și îl scrie pe disk. Dacă fișierul 
+nu există, serverul îi semnalează clientului o eroare.
+
+Implementați atât clientul cât și serverul, folosind sockeți TCP. Serverul 
+trebuie să suporte mai multe conexiuni simultane.
+
+2)
+
+Scrieți o aplicație de chat multi-client. Un server memorează o listă de clienți
+de forma (nume, adresă_ip, port). Când un client se conectează la server,
+serverul determină adresa ip și portul și primește de la client un nume (un șir
+de caractere cu rol de username); apoi adaugă aceste informații în lista de
+clienți.
+
+Serverul suportă operația "LIST" pentru care transmite unui client lista cu toți
+clienții, iar clientul o afișează pe ecran.
+
+Clientul suportă de la tastatură comanda "CONNECT" care primește ca argument
+numele altui client și crează o conexiune directă către acesta. După ce
+conexiunea e stabilită, cei doi clienți vorbesc direct între ei, pe rând 
+(primul mesaj îl trimite clientul care a inițiat conexiunea, apoi celălalt etc.)
+După inițierea unei conexiuni între ei, puteți să ignorați acei doi clienți, nu 
+trebuie tratat cazul în care redevin disponibili pentru viitoare conexiuni.
+
+Implementați atât clientul cât și serverul, folosind sockeți TCP.
+
+3)
+
+Scrieți o aplicație client-server care folosește TCP care să implementeze 
+jocul ghicește numărul. 
+Serverul va accepta un număr variabil de clienți, iar pentru fiecare dintre ei 
+va genera aleator un număr (folosind formula rand() % 1000). Ulterior, clienții
+vor putea (în orice moment și în orice ordine să încerce să ghicească numărul ce
+le este generat prin introducerea lui de la tastatură.
+Mențiuni:
+
+Pentru fiecare client nou conectat serverul va afișa la STDOUT un mesaj de tipul
+„Pentru clientul cu socket-ul X am generat numărul Y”.
+Numerele vor fi citite în clienți de la STDOUT.
+Pentru fiecare număr încercat clienții vor primi un mesaj, din următoarea 
+colecție:
+Numărul X este mai mare decât cel ales.
+Numărul X este mai mic decât cel ales.
+Felicitări, ai ghicit numărul.
+Implementarea trebuie făcută astfel încât numărul ales de server să nu fie
+cunoscut aplicației client (NU este permis să trimiteți numărul de la server
+către client).
+Jocul se termină la ghicirea numărului.
+La finalul jocului, clientul va fi deconectat, având posibilitatea de a se
+reconecta pentru a începe un joc nou.
+Clienții se vor închide automat la ghicirea numărului.
+Comenzile de rulare pentru server și client sunt:
+
+./server PORT
+./client IP_SERVER PORT_SERVER
+Serverul va accepta conexiuni pe portul indicat prin toate adresele IP ale sale.
+
+4)
+Să se implementeze un sistem de tipul client-server in care serverul accepta 
+conexiuni de la mai mulţi clienţi in paralel (TCP/IP). Fiecare client are un şir
+ de numere naturale şi doreşte sa verifice daca un număr este sau nu prim.
+ Astfel trimite serverului cate un număr şi acesta verifica proprietatea. Daca
+ numărul este prim răspunde clientului, iar dacă nu este, nu răspunde.Clientul
+ se va inchide dupa ce termina de verificat toate elementele din lista sa.
+
+================================================================================
+ 5)
+Implementati o aplicatie client-server cache HTTP. Server-ul va rula peste TCP,
+va astepta cereri de la diferiti clienti pentru diferite pagini web. Daca pagina
+web a fost ceruta in prealabil si ea deja se gaseste salvata local, se va 
+returna ca atare. Daca nu, server-ul va realiza o cerere HTTP pentru pagina
+ceruta si va trimite, ca raspuns, rezultatul cererii. Conexiunea se va incheia
+dupa fiecare comanda. Mai mult, server-ul va salva, intr-un “cache” pe disk,
+pagina descarcata, impreuna cu toate headere-le parsate cheie – valoare din
+raspuns, in memorie.
+
+Considerente de implementare:
+
+-          Comanda de la client va fi sub forma “GET <adresa>”
+
+-          Pentru a pastra cache-ul “fresh” la server, la fiecare trecere prin 
+el se va verifica fiecare inregistrare; daca o inregistrare este mai veche de 1
+ minut, ea va fi stearsa (hint: parsare header “Date” din raspunsul HTTP)
+
+-          Se va utiliza “select” atat in implementarea server-ului cat si
+ a clientului
+
+-          Cache-ul va avea o dimensiune maxima N (primita ca argument in linia
+de comanda la server); cele mai vechi pagini vor fi sterse din memorie si de 
+ e disk
+
+ 
+
+Flow minim de rulare:
+
+1.       Se conecteaza un client la server, cere o pagina, pagina ii este 
+servita live descarcata direct, salvata pe disk-ul server-ului si pe disk-ul 
+clientului (dupa descarcare).
+
+2.       Se conecteaza imediat un al doilea client la server, cere aceeasi 
+pagina, ii este servita din cache. Diff pe pagina descarcata de client si 
+pagina stocata pe server in cache, sunt identice.
+
+3.       Acelasi al doilea client, dupa un minut, face o cerere la server si 
+primeste varianta “fresh”.
+
+4.       Pentru un cache cu dimensiune 1, doi clienti conectati simultan cerand 
+aceeasi pagina de fiecare data, vor primi mereu pagina “fresh”.
+================================================================================

@@ -1,8 +1,20 @@
 #ifndef _HELPERS_H
 #define _HELPERS_H 1
 
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+#include <vector>
+#include <string>
+
+using namespace std;
 
 /*
  * Macro de verificare a erorilor
@@ -22,6 +34,6 @@
 	} while(0)
 
 #define BUFLEN		256	// dimensiunea maxima a calupului de date
-#define MAX_CLIENTS	5	// numarul maxim de clienti in asteptare
+#define MAX_CLIENTS	20	// numarul maxim de clienti in asteptare
 
 #endif

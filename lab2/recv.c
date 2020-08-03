@@ -6,7 +6,7 @@
 #include "link_emulator/lib.h"
 
 #define HOST "127.0.0.1"
-#define PORT 10001
+#define PORT 10000
 
 
 int main(int argc,char** argv){
@@ -15,14 +15,15 @@ int main(int argc,char** argv){
   int check = 0, fd, file_size;
   init(HOST, PORT);
 
-
-  if (recv_message(&r)<0){
+  int ret = recv_message(&r);
+puts("aoiici");
+  if (!ret){
     perror("Receive message");
     return -1;
   }
 
-  //memcpy(p.type, r.payload, sizeof(int));
-  //printf("%d %s", r.len, r.payload);
+  // memcpy(p.type, r.payload, sizeof(int));
+  printf("%d %s", r.len, r.payload);
   //type - 0 pentru mesaj, 1 pentru ack
   printf("[recv] NUMELE FISIERULUI ESTE <%s>, dimeniunea <%d>, sending ACK...\n", r.payload, r.len);
   file_size = r.len;

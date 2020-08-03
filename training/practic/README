@@ -1,0 +1,19 @@
+README
+
+Are o problema pe care nu am reusit sa o rezolv: cand dau quit din server, 
+apare un bad file descriptor, in rest nu cred ca are probleme in care sa crape,
+in pricipiu merge pe edge case-uri.
+
+OBS!
+1) Am folosit boost pentru split
+#include <boost/algorithm/string/split.hpp>
+Pe Ubuntu 20.04 am instalat cu sudo apt-get install boost1.71 
+
+2) Daca primul utilizator incearca sa ghiceasca numarul, acesta nu va putea, 
+dar nu se va afisa un mesaj explicit cand da guess, doar nu o sa mearga.
+
+3) Merge resetat numarul pe care trebuie sa il ghiceasca.
+
+4) Dupa ce s-a ghicit numarul, serverul se inchide
+
+
